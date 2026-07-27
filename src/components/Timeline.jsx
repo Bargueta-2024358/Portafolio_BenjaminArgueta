@@ -27,6 +27,7 @@ function Timeline() {
     <section id="trayectoria" className="section timeline">
       <div className="container">
         <div className="section__header">
+          <span className="section__index">03 (Camino)</span>
           <h2 className="section__title">
             Trayector<span>ia</span>
           </h2>

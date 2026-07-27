@@ -1,44 +1,42 @@
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #14141c;
-  --bg-elevated: #1a1a24;
-  --bg-muted: #22222e;
+  --bg-primary: #000000;
+  --bg-secondary: #03060c;
+  --bg-elevated: #081018;
+  --bg-muted: #0d1626;
 
-  --text-primary: #f0f0f5;
-  --text-secondary: #a0a0b0;
-  --text-muted: #6b6b7b;
+  --text-primary: #f4f7ff;
+  --text-secondary: #8fa4c4;
+  --text-muted: #53667f;
 
-  --accent: #22d3ee;
-  --accent-soft: rgba(34, 211, 238, 0.12);
-  --accent-hover: #67e8f9;
-  --accent-glow: rgba(34, 211, 238, 0.25);
+  --accent: #2563ff;
+  --accent-bright: #6b92ff;
+  --accent-deep: #1039c9;
+  --accent-soft: rgba(37, 99, 255, 0.16);
+  --accent-line: rgba(37, 99, 255, 0.5);
 
-  --border: rgba(255, 255, 255, 0.06);
-  --border-accent: rgba(34, 211, 238, 0.35);
+  --border: rgba(130, 170, 230, 0.12);
+  --border-strong: rgba(37, 99, 255, 0.42);
 
-  --font-sans: 'Poppins', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.4rem;
+  --radius-lg: 0.55rem;
   --radius-full: 9999px;
-
-  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --shadow-accent: 0 0 24px var(--accent-glow);
 
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4.5rem;
+  --space-2xl: 3.25rem;
+  --space-3xl: 5.5rem;
 
-  --nav-height: 4.25rem;
-  --container: min(1100px, 100% - 2rem);
-  --transition: 0.25s ease;
+  --nav-height: 4.35rem;
+  --container: min(1160px, 100% - 2.75rem);
+  --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *,
@@ -58,9 +56,27 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 90% 55% at 80% -5%, rgba(37, 99, 255, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 40%, rgba(16, 57, 201, 0.12), transparent 50%),
+    linear-gradient(rgba(37, 99, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 255, 0.028) 1px, transparent 1px);
+  background-size: auto, auto, 72px 72px, 72px 72px;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 img {
@@ -86,6 +102,11 @@ ol {
   list-style: none;
 }
 
+::selection {
+  background: rgba(37, 99, 255, 0.4);
+  color: #fff;
+}
+
 .container {
   width: var(--container);
   margin-inline: auto;
@@ -93,66 +114,96 @@ ol {
 
 .section {
   padding: var(--space-3xl) 0;
+  position: relative;
 }
 
 .section__header {
-  margin-bottom: var(--space-2xl);
-  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3.25rem);
+  display: grid;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.section__index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-bright);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.section__index::before {
+  content: '';
+  width: 1.75rem;
+  height: 1px;
+  background: var(--accent);
 }
 
 .section__title {
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 7vw, 4.25rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  max-width: 12ch;
 }
 
 .section__title span {
-  color: var(--accent);
+  color: var(--accent-bright);
 }
 
 .section__subtitle {
   color: var(--text-secondary);
-  max-width: 36rem;
-  margin-inline: auto;
-  font-size: 0.95rem;
+  max-width: 34rem;
+  font-size: 1.05rem;
+  margin-top: 0.25rem;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.35rem;
+  gap: 0.55rem;
+  padding: 0.9rem 1.5rem;
   border-radius: var(--radius-sm);
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: background var(--transition), color var(--transition),
-    border-color var(--transition), transform var(--transition),
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
     box-shadow var(--transition);
 }
 
 .btn--primary {
-  background: var(--accent);
-  color: #041016;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+  color: #f5f8ff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn--primary:hover {
-  background: var(--accent-hover);
-  box-shadow: var(--shadow-accent);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37, 99, 255, 0.35);
 }
 
 .btn--ghost {
-  border: 1px solid var(--border-accent);
-  color: var(--accent);
-  background: var(--accent-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
 }
 
 .btn--ghost:hover {
-  border-color: var(--accent);
-  background: rgba(34, 211, 238, 0.2);
-  transform: translateY(-1px);
+  border-color: var(--accent-bright);
+  background: var(--accent-soft);
+  color: #fff;
+  transform: translateY(-3px);
 }
 
 .mono {
@@ -161,6 +212,7 @@ ol {
 
 @media (max-width: 768px) {
   :root {
-    --space-3xl: 3.25rem;
+    --space-3xl: 3.75rem;
+    --container: min(1160px, 100% - 1.4rem);
   }
 }

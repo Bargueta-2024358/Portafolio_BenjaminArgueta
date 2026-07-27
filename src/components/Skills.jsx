@@ -7,6 +7,7 @@ function Skills() {
     <section id="habilidades" className="section skills">
       <div className="container">
         <div className="section__header">
+          <span className="section__index">02 (Stack)</span>
           <h2 className="section__title">
             Habili<span>dades</span>
           </h2>

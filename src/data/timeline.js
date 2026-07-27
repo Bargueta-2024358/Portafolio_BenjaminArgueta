@@ -2,7 +2,7 @@ export const timeline = [
   {
     id: 'education',
     type: 'formacion',
-    title: 'Perito en Informática — Kinal',
+    title: 'Perito en Informática (Kinal)',
     period: 'Formación',
     description:
       'Formación técnica enfocada en desarrollo de software, bases de datos y construcción de aplicaciones con buenas prácticas.',

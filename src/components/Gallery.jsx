@@ -100,6 +100,7 @@ function Gallery() {
     <section id="galeria" className="section gallery">
       <div className="container">
         <div className="section__header">
+          <span className="section__index">04 (En vivo)</span>
           <h2 className="section__title">
             Galer<span>ía</span>
           </h2>

@@ -38,6 +38,7 @@ function Projects() {
     <section id="proyectos" className="section projects">
       <div className="container">
         <div className="section__header">
+          <span className="section__index">05 (Trabajo)</span>
           <h2 className="section__title">
             Proyec<span>tos</span>
           </h2>

@@ -13,6 +13,7 @@ function Contact() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.55 }}
         >
+          <span className="section__index">06 (Contacto)</span>
           <h2 className="section__title contact__title">
             ¿Trabajamos <span>juntos?</span>
           </h2>

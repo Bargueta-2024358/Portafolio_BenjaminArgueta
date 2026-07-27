@@ -9,7 +9,7 @@ function Footer() {
       <div className="container footer__inner">
         <div className="footer__info">
           <p className="footer__meta">
-            Ciudad de Guatemala · Desarrollador web
+            Ciudad de Guatemala (Desarrollador web)
           </p>
           <p className="footer__copy">
             © {year} Benjamín Elí Argueta Caal

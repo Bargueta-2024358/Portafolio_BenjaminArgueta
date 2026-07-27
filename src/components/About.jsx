@@ -24,6 +24,7 @@ function About() {
     <section id="sobre-mi" className="section about">
       <div className="container">
         <div className="section__header">
+          <span className="section__index">01 (Identidad)</span>
           <h2 className="section__title">
             Sobre <span>mí</span>
           </h2>
@@ -40,7 +41,7 @@ function About() {
             <p>
               Mi apodo es <span className="mono accent">Elipsis</span>. Mi interés
               me genera ambición, y esa ambición se traduce en el esfuerzo y el
-              empeño que le pongo a cada trabajo —sin importar el área—, siempre
+              empeño que le pongo a cada trabajo (sin importar el área), siempre
               tratando de dar lo mejor que puedo ofrecer.
             </p>
           </motion.div>
@@ -52,7 +53,7 @@ function About() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.55, delay: 0.1 }}
           >
-            <h3 className="about__card-title mono">ficha.personal</h3>
+            <h3 className="about__card-title mono">Datos generales</h3>
             <ul className="about__facts">
               {aboutFacts.map((fact) => {
                 const Icon = icons[fact.id]
