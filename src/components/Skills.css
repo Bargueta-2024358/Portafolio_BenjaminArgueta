@@ -1,0 +1,39 @@
+.skills__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.skills__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  margin-bottom: 0.55rem;
+}
+
+.skills__name {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.skills__percent {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.skills__track {
+  height: 0.55rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-muted);
+  overflow: hidden;
+}
+
+.skills__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+  box-shadow: 0 0 12px var(--accent-glow);
+}
